@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+  <title>Returning to Social Metrics Updater</title>
+  <style>body{font:18px/1.5 system-ui,sans-serif;max-width:38rem;margin:12vh auto;padding:0 1.5rem;color:#122844}</style>
+</head>
+<body>
+  <h1>Returning to your Mac…</h1>
+  <p id="status">Completing the Instagram connection locally.</p>
+  <script>
+    (() => {
+      const input = new URLSearchParams(location.search);
+      const state = input.getAll("state");
+      const code = input.getAll("code");
+      const error = input.getAll("error");
+      if (state.length !== 1 || state[0].length < 20 || state[0].length > 128 ||
+          (code.length !== 1 && error.length !== 1) || code.length > 1 || error.length > 1 ||
+          (code.length === 1 && code[0].length > 2048)) {
+        document.getElementById("status").textContent = "This sign-in response was incomplete. Please return to the updater and try again.";
+        return;
+      }
+      const output = new URLSearchParams();
+      output.set("state", state[0]);
+      if (code.length === 1) output.set("code", code[0]);
+      if (error.length === 1) output.set("error", "cancelled");
+      location.replace("http://127.0.0.1:46341/instagram/callback?" + output.toString());
+    })();
+  </script>
+</body>
+</html>
