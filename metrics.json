@@ -1,20 +1,20 @@
 {
   "schemaVersion": 2,
-  "versionId": "ig-2026-11-21-20261123T020006Z",
+  "versionId": "ig-2026-11-22-20261124T020004Z",
   "status": "published",
   "account": "@atil_singh",
   "profileUrl": "https://www.instagram.com/atil_singh/",
   "source": "Meta Instagram account Insights API (UTC)",
   "period": {
     "label": "30 days · UTC",
-    "start": "2026-10-23",
-    "end": "2026-11-21"
+    "start": "2026-10-24",
+    "end": "2026-11-22"
   },
   "metrics": [
     {
       "id": "content_views",
-      "value": 790169,
-      "display": "790.2K",
+      "value": 710938,
+      "display": "710.9K",
       "label": "Content views",
       "unit": "count",
       "precision": "rounded",
@@ -26,8 +26,8 @@
     },
     {
       "id": "accounts_reached",
-      "value": 131372,
-      "display": "131.4K",
+      "value": 127890,
+      "display": "127.9K",
       "label": "Accounts reached",
       "unit": "count",
       "precision": "rounded",
@@ -39,6 +39,6 @@
     }
   ],
   "supportingNote": "Historical Instagram activity; compact display values are rounded from API counts.",
-  "publishedAt": "2026-11-23T02:00:06+00:00",
-  "previousVersionId": "ig-2026-11-20-20261122T020006Z"
+  "publishedAt": "2026-11-24T02:00:04+00:00",
+  "previousVersionId": "ig-2026-11-21-20261123T020006Z"
 }
